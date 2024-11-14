@@ -1,19 +1,18 @@
 const base_url = "https://pokeapi.co/api/v2/pokemon/";
-
 const PokeDex = [];
 
 async function onload() {
-    await test();
+    await loopPushData();
     output();
 }
 
-async function test() {
+async function loopPushData() {
     for (let i = 1; i < 21; i++) {
-        await loadData(i)
+        await pushData(i)
     } 
 }
 
-async function loadData(path = "") {
+async function pushData(path = "") {
     let response = await fetch(base_url + path);
     let responseToJson = await response.json();
     PokeDex.push(responseToJson);
