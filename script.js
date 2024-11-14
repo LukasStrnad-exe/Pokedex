@@ -1,13 +1,24 @@
-function onload() {
-    console.log("test");
-    loadData("/21");
-  }
-  
-  const base_url =
-    "https://pokeapi.co/api/v2/pokemon/";
-  
-  async function loadData(path = "", subPath) {
+const base_url = "https://pokeapi.co/api/v2/pokemon/";
+
+const PokeDex = [];
+
+async function onload() {
+    await test();
+    output();
+}
+
+async function test() {
+    for (let i = 1; i < 21; i++) {
+        await loadData(i)
+    } 
+}
+
+async function loadData(path = "") {
     let response = await fetch(base_url + path);
     let responseToJson = await response.json();
-    console.log(responseToJson);
+    PokeDex.push(responseToJson);
   }
+
+function output() {
+    console.log(PokeDex);
+}
