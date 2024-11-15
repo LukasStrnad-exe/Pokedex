@@ -43,3 +43,8 @@ header img {
 .custom_input img {
   height: 10px;
 }
+
+.load_button img {
+  width: 52px;
+  border-radius: 50%;
+}

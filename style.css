@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #282828;
 }
 
@@ -79,4 +79,20 @@ body{
 
 .custom_input {
   width: 100%;
+}
+
+.load_button button {
+  background-color: #4f4f4e;
+  border-radius: 50%;
+  height: 68px;
+  cursor: pointer;
+}
+
+.load_button :hover {
+  background-color: #282828;
+}
+
+.load_button {
+  margin-bottom: 20px;
+  border-radius: 50%;
 }
