@@ -1,5 +1,5 @@
-const base_url = "https://pokeapi.co/api/v2/pokemon/";
-const PokeDex = [];
+let base_url = "https://pokeapi.co/api/v2/pokemon/";
+let PokeDex = [];
 let load = 1;
 
 async function onload() {
@@ -32,7 +32,7 @@ async function pushData(path = "") {
 
 function render(y, z) {
   for (let i = y; i < z; i++) {
-    const pokemon = PokeDex[i];
+    let pokemon = PokeDex[i];
     let container = document.getElementById("container");
     container.innerHTML += containerTemplate(pokemon, i);
     BgColorType(pokemon, i);
