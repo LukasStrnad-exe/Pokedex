@@ -1,44 +1,56 @@
 const base_url = "https://pokeapi.co/api/v2/pokemon/";
 const PokeDex = [];
+let load = 1;
 
 async function onload() {
-    await loopPushData();
-    render();
+  await loopPushData(1, 21);
+  render(0, 20);
 }
 
-async function loopPushData() {
-    for (let i = 650; i < 700; i++) {
-        await pushData(i)
-    } 
+async function loadButton() {
+  x = 20 * load;
+  y = 0 + x;
+  z = 20 + x;
+  yLoop = y + 1;
+  zLoop = z + 1;
+  load++;
+  await loopPushData(yLoop, zLoop);
+  render(y, z);
+}
+
+async function loopPushData(y, z) {
+  for (let i = y; i < z; i++) {
+    await pushData(i);
+  }
 }
 
 async function pushData(path = "") {
-    let response = await fetch(base_url + path);
-    let responseToJson = await response.json();
-    PokeDex.push(responseToJson);
+  let response = await fetch(base_url + path);
+  let responseToJson = await response.json();
+  PokeDex.push(responseToJson);
 }
 
-function render() {
-    for (let i = 0; i < PokeDex.length; i++) {
-        const pokemon = PokeDex[i];
-        let container = document.getElementById('container');
-        container.innerHTML += containerTemplate(pokemon,i);
-        BgColorType(pokemon,i)
-    }
+function render(y, z) {
+  for (let i = y; i < z; i++) {
+    const pokemon = PokeDex[i];
+    let container = document.getElementById("container");
+    container.innerHTML += containerTemplate(pokemon, i);
+    BgColorType(pokemon, i);
+  }
 }
 
-function displaytype1(pokemon){
-    let type1 = pokemon.types[1] ? pokemon.types[1].type.name : '';
-    return type1;
+function displaytype1(pokemon) {
+  let type1 = pokemon.types[1] ? pokemon.types[1].type.name : "";
+  return type1;
 }
 
 function deletetype1(pokemon, i) {
-    let type1 = pokemon.types[1] ? pokemon.types[1].type.name : '';
-    if (type1 === "") {
-        return ``;
-    } else {
-        return `
+  let type1 = pokemon.types[1] ? pokemon.types[1].type.name : "";
+  if (type1 === "") {
+    return ``;
+  } else {
+    return `
             <div class="pokemon_1_element" id="type1${i}">${type1}</div>
         `;
-    }
+  }
 }
