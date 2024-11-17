@@ -26,16 +26,23 @@
   <body onload="onload()">
     <header>
       <div class="head">
-        <img src="assets/img/logo.png" alt="logo" />
+        <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
       </div>
     </header>
     <div class="wrapper">
       <div class="custom_input">
-        <input class="input" type="text" placeholder="Search your Pokemon" />
-        <button><img src="assets/icons/lupe.png" alt="suche" /></button>
+        <input
+          id="filterword"
+          class="input"
+          type="text"
+          placeholder="Search your Pokemon"
+        />
+        <button onclick="search()">
+          <img src="assets/icons/lupe.png" alt="suche" />
+        </button>
       </div>
       <div class="container" id="container"></div>
-      <div class="load_button" onclick="loadButton()">
+      <div class="load_button" id="loadButton" onclick="loadButton()">
         <button>
           <img src="assets/icons/aktualisierung.png" alt="load_pokemon" />
         </button>

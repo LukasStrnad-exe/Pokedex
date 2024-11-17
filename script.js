@@ -1,5 +1,6 @@
 let base_url = "https://pokeapi.co/api/v2/pokemon/";
 let PokeDex = [];
+let searchPoke = [];
 let load = 1;
 
 async function onload() {
@@ -31,9 +32,9 @@ async function pushData(path = "") {
 }
 
 function render(y, z) {
+  let container = document.getElementById("container");
   for (let i = y; i < z; i++) {
     let pokemon = PokeDex[i];
-    let container = document.getElementById("container");
     container.innerHTML += containerTemplate(pokemon, i);
     BgColorType(pokemon, i);
   }
@@ -53,4 +54,31 @@ function deletetype1(pokemon, i) {
             <div class="pokemon_1_element" id="type1${i}">${type1}</div>
         `;
   }
+}
+
+function search() {
+  let filterword = document.getElementById("filterword").value;
+  searchPoke = PokeDex.filter((pokemon) => pokemon.name.includes(filterword));
+  console.log(searchPoke);
+
+  rendersearch();
+}
+
+function rendersearch() {
+  hide("loadButton");
+  container.innerHTML = ``;
+  for (let i = 0; i < searchPoke.length; i++) {
+    let pokemon = searchPoke[i];
+    let container = document.getElementById("container");
+    container.innerHTML += containerTemplate(pokemon, i);
+    BgColorType(pokemon, i);
+  }
+}
+
+function hide(id) {
+  document.getElementById(id).classList.add("d-none");
+}
+
+function show(id) {
+  document.getElementById(id).classList.toggle("d-none");
 }
