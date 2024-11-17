@@ -9,6 +9,7 @@ async function onload() {
 }
 
 async function loadButton() {
+  hide("loadButton");
   x = 20 * load;
   y = 0 + x;
   z = 20 + x;
@@ -17,6 +18,7 @@ async function loadButton() {
   load++;
   await loopPushData(yLoop, zLoop);
   render(y, z);
+  show("loadButton");
 }
 
 async function loopPushData(y, z) {
