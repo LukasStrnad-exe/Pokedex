@@ -1,5 +1,5 @@
 .detailinformation {
-  background-color: green;
+  background-color: white;
 }
 
 .detailinformation_upper_half {
@@ -19,7 +19,7 @@
 .detail_name {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .detailinformation_lower_half {
-  background-color: white;
+  background-color: green;
   height: 40vh;
   border-radius: 4px;
   padding-left: 10px;
@@ -39,8 +39,9 @@
 .detail_menu {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 5vh;
+  width: 100%;
 }
 
 .detail_menu :hover {
@@ -54,6 +55,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .detail_pack {
@@ -67,7 +69,7 @@
 .detail_type {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 
