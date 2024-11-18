@@ -82,5 +82,5 @@ function hide(id) {
 }
 
 function show(id) {
-  document.getElementById(id).classList.toggle("d-none");
+  document.getElementById(id).classList.remove("d-none");
 }

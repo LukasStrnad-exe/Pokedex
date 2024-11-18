@@ -1,0 +1,84 @@
+.detailinformation {
+  background-color: green;
+}
+
+.detailinformation_upper_half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  height: 40vh;
+}
+
+.detail_sprite img {
+  height: 24vh;
+}
+
+.detail_name {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.detail_name img {
+  height: 3vh;
+  cursor: pointer;
+}
+
+.detailinformation_lower_half {
+  background-color: white;
+  height: 40vh;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.detail_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 5vh;
+}
+
+.detail_menu :hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.detail_container {
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.detail_pack {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+
+.detail_type {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.breeding {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  width: 100%;
+}
+
+.detail_breeding_value img {
+  height: 16px;
+}

@@ -96,3 +96,26 @@ body {
   margin-bottom: 20px;
   border-radius: 50%;
 }
+
+.detailinformation {
+  height: 80vh;
+  width: 50vw;
+  z-index: 101;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.detailinformation-bg {
+  background-color: rgb(0, 0, 0, 0.2);
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -4,7 +4,7 @@ function containerTemplate(pokemon, i) {
   let name = pokemon.name;
   let type0 = pokemon.types[0].type.name;
   return `
-        <div class="pokemon_card">
+        <div class="pokemon_card" onclick="show('detailinformationBg')">
             <div class="pokemon_img">
                 <img src="${sprite}" alt="${name}" />
             </div>
