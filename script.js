@@ -6,6 +6,7 @@ let load = 1;
 async function onload() {
   await loopPushData(1, 21);
   render(0, 20);
+  renderDetail();
 }
 
 async function loadButton() {
@@ -40,6 +41,11 @@ function render(y, z) {
     container.innerHTML += containerTemplate(pokemon, i);
     BgColorType(pokemon, i);
   }
+}
+
+function renderDetail() {
+  let detailContainer = document.getElementById("detailinformation");
+  detailContainer.innerHTML = detailContainerTemplate();
 }
 
 function displaytype1(pokemon) {
