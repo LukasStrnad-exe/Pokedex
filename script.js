@@ -39,13 +39,15 @@ function render(y, z) {
   for (let i = y; i < z; i++) {
     let pokemon = PokeDex[i];
     container.innerHTML += containerTemplate(pokemon, i);
-    BgColorType(pokemon, i);
+    BgColorType(i, 0, PokeDex);
   }
 }
 
-function renderDetail() {
+function renderDetail(i) {
+  let pokemon = PokeDex[i];
   let detailContainer = document.getElementById("detailinformation");
-  detailContainer.innerHTML = detailContainerTemplate();
+  detailContainer.innerHTML = detailUpperContainerTemplate(pokemon, i);
+  detailContainer.innerHTML += detailLowerContainerTemplate(pokemon, i);
 }
 
 function displaytype1(pokemon) {
@@ -53,14 +55,25 @@ function displaytype1(pokemon) {
   return type1;
 }
 
-function deletetype1(pokemon, i) {
+function deletetype1(pokemon, i, id) {
   let type1 = pokemon.types[1] ? pokemon.types[1].type.name : "";
   if (type1 === "") {
     return ``;
   } else {
     return `
-            <div class="pokemon_1_element" id="type1${i}">${type1}</div>
+            <div class="pokemon_1_element" id="type1${id}${i}">${type1}</div>
         `;
+  }
+}
+
+function deleteAbility1(pokemon) {
+  let ability1 = pokemon.abilities[1] ? pokemon.abilities[1].ability.name : "";
+  if (ability1 === "") {
+    return ``;
+  } else {
+    return `
+        / ${ability1}
+          `;
   }
 }
 
@@ -79,7 +92,7 @@ function rendersearch() {
     let pokemon = searchPoke[i];
     let container = document.getElementById("container");
     container.innerHTML += containerTemplate(pokemon, i);
-    BgColorType(pokemon, i);
+    BgColorType(i, 0, searchPoke);
   }
 }
 
