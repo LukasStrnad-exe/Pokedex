@@ -54,9 +54,13 @@ function detailUpperContainerTemplate(pokemon, i) {
 }
 
 function detailLowerContainerTemplate(pokemon, i) {
-  height = pokemon.height / 10;
-  weight = pokemon.weight / 10;
-  ability0 = pokemon.abilities[0].ability.name;
+  let pokemonSpecies = PokeSpecies[i];
+  let height = pokemon.height / 10;
+  let weight = pokemon.weight / 10;
+  let ability0 = pokemon.abilities[0].ability.name;
+  let femaleRate = (pokemonSpecies.gender_rate / 8) * 100;
+  let maleRate = 100 - femaleRate;
+
   return `
     <div class="detailinformation_lower_half" id="type02${i}">
       <div class="wrapper">
@@ -91,9 +95,9 @@ function detailLowerContainerTemplate(pokemon, i) {
             </div>
             <div class="detail_breeding_value">
               <img src="assets/icons/mannliches.png" alt="mänlich" />
-              50%
+              ${maleRate}%
               <img src="assets/icons/weiblich.png" alt="weiblich" />
-              50% <br />
+              ${femaleRate}% <br />
               Monster <br />
               Grass <br />
             </div>
