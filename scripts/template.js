@@ -53,21 +53,25 @@ function detailUpperContainerTemplate(pokemon, i) {
   `;
 }
 
-function detailLowerContainerTemplate(pokemon, i) {
+function detailLowerContainerAboutTemplate(pokemon, i) {
   let pokemonSpecies = PokeSpecies[i];
   let height = pokemon.height / 10;
   let weight = pokemon.weight / 10;
   let ability0 = pokemon.abilities[0].ability.name;
   let femaleRate = (pokemonSpecies.gender_rate / 8) * 100;
   let maleRate = 100 - femaleRate;
+  let eggGroup0 = pokemonSpecies.egg_groups[0].name;
+  let eggCycle = pokemonSpecies.hatch_counter;
+  let baseHappiness = pokemonSpecies.base_happiness;
+  let captureRate = pokemonSpecies.capture_rate;
 
   return `
     <div class="detailinformation_lower_half" id="type02${i}">
-      <div class="wrapper">
+      <div class="wrapper" id="downDetailRender">
         <div class="detail_menu">
-          <p><b>about</b></p>
-          <p>stats</p>
-          <p>evolution</p>
+          <p onclick="renderDetail(${i}),"><b>about</b></p>
+          <p onclick="renderDetailStats(${i})">stats</p>
+          <p onclick="renderDetailEvolution(${i})">evolution</p>
         </div>
         <div class="detail_container">
           <div class="detail_pack">
@@ -76,12 +80,16 @@ function detailLowerContainerTemplate(pokemon, i) {
                 Height <br />
                 Weight <br />
                 Abilities <br />
+                Base Happines <br />
+                Capture Rate <br />
               </b>
             </div>
             <div class="detail_value">
               ${height} m <br />
               ${weight} kg <br />
               ${ability0}${deleteAbility1(pokemon)} <br />
+              ${baseHappiness} <br />
+              ${captureRate} <br />
             </div>
           </div>
           <h3>Breeding</h3>
@@ -98,12 +106,62 @@ function detailLowerContainerTemplate(pokemon, i) {
               ${maleRate}%
               <img src="assets/icons/weiblich.png" alt="weiblich" />
               ${femaleRate}% <br />
-              Monster <br />
-              Grass <br />
+              ${eggGroup0} ${deleteEggGroup1(pokemonSpecies)} <br />
+              ${eggCycle} <br />
             </div>
           </div>
         </div>
       </div>
     </div>
   `;
+}
+
+function detailLowerContainerStatsTemplate(pokemon, i) {
+  return `
+    <div class="detail_menu">
+      <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
+      <p onclick="renderDetailStats(${i})"><b>stats</b></p>
+      <p onclick="renderDetailEvolution(${i})">evolution</p>
+    </div>
+    <div class="detail_container">
+          <div class="detail_pack">
+            <div class="detail_keys">
+            <b>HP</b> <br>
+            <b>Atk</b> <br>
+            <b>Def</b> <br>
+            <b>SpAtk</b> <br>
+            <b>SpDef</b> <br>
+            <b>Spd</b> <br>
+            </div>
+            <div class="detail_value">
+            25 <br>
+            25 <br>
+            25 <br>
+            25 <br>
+            25 <br>
+            25 <br>
+            </div>
+          </div>
+          </div>
+        </div>
+  `;
+}
+
+function detailLowerContainerEvoTemplate(pokemon, i) {
+  return `
+      <div class="detail_menu">
+        <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
+        <p onclick="renderDetailStats(${i})">stats</p>
+        <p><b>evolution</b></p>
+      </div>
+      <div class="detail_container">
+            <div class="detail_pack">
+              <div class="detail_keys">
+              </div>
+              <div class="detail_value">
+              </div>
+            </div>
+            </div>
+          </div>
+    `;
 }

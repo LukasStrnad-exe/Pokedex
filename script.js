@@ -51,7 +51,19 @@ function renderDetail(i) {
   let pokemon = PokeDex[i];
   let detailContainer = document.getElementById("detailinformation");
   detailContainer.innerHTML = detailUpperContainerTemplate(pokemon, i);
-  detailContainer.innerHTML += detailLowerContainerTemplate(pokemon, i);
+  detailContainer.innerHTML += detailLowerContainerAboutTemplate(pokemon, i);
+}
+
+function renderDetailStats(i) {
+  let pokemon = PokeDex[i];
+  let downDetailRender = document.getElementById("downDetailRender");
+  downDetailRender.innerHTML = detailLowerContainerStatsTemplate(pokemon, i);
+}
+
+function renderDetailEvolution(i) {
+  let pokemon = PokeDex[i];
+  let downDetailRender = document.getElementById("downDetailRender");
+  downDetailRender.innerHTML = detailLowerContainerEvoTemplate(pokemon, i);
 }
 
 function displaytype1(pokemon) {
@@ -77,6 +89,19 @@ function deleteAbility1(pokemon) {
   } else {
     return `
         / ${ability1}
+          `;
+  }
+}
+
+function deleteEggGroup1(pokemonSpecies) {
+  let eggGroup0 = pokemonSpecies.egg_groups[1]
+    ? pokemonSpecies.egg_groups[1].name
+    : "";
+  if (eggGroup0 === "") {
+    return ``;
+  } else {
+    return `
+        / ${eggGroup0}
           `;
   }
 }
