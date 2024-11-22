@@ -2,6 +2,15 @@ body {
   background-color: #282828;
 }
 
+:root {
+  --hp: 10%;
+  --atk: 20%;
+  --def: 30%;
+  --spatk: 40%;
+  --spdef: 50%;
+  --spd: 60%;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -118,4 +127,76 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.gradbox_hp {
+  height: 14px;
+  width: 100%;
+  background-color: white;
+  background-image: linear-gradient(
+    to right,
+    #202020 var(--hp),
+    rgba(0, 0, 0, 0) var(--hp)
+  );
+  border-radius: 4px;
+}
+
+.gradbox_atk {
+  height: 14px;
+  width: 100%;
+  background-color: white;
+  background-image: linear-gradient(
+    to right,
+    #202020 var(--atk),
+    rgba(0, 0, 0, 0) var(--atk)
+  );
+  border-radius: 4px;
+}
+
+.gradbox_def {
+  height: 14px;
+  width: 100%;
+  background-color: white;
+  background-image: linear-gradient(
+    to right,
+    #202020 var(--def),
+    rgba(0, 0, 0, 0) var(--def)
+  );
+  border-radius: 4px;
+}
+
+.gradbox_spatk {
+  height: 14px;
+  width: 100%;
+  background-color: white;
+  background-image: linear-gradient(
+    to right,
+    #202020 var(--spatk),
+    rgba(0, 0, 0, 0) var(--spatk)
+  );
+  border-radius: 4px;
+}
+
+.gradbox_spdef {
+  height: 14px;
+  width: 100%;
+  background-color: white;
+  background-image: linear-gradient(
+    to right,
+    #202020 var(--spdef),
+    rgba(0, 0, 0, 0) var(--spdef)
+  );
+  border-radius: 4px;
+}
+
+.gradbox_spd {
+  height: 14px;
+  width: 100%;
+  background-color: white;
+  background-image: linear-gradient(
+    to right,
+    #202020 var(--spd),
+    rgba(0, 0, 0, 0) var(--spd)
+  );
+  border-radius: 4px;
 }

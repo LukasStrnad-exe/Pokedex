@@ -46,7 +46,7 @@ function detailUpperContainerTemplate(pokemon, i) {
             <div class="pokemon_0_element" id="type01${i}">${type0}</div>
             ${deletetype1(pokemon, i, 1)}
           </div>
-          <p>${id}#</p>
+          <p class="color_white">${id}#</p>
         </div>
       </div>
     </div>
@@ -117,6 +117,12 @@ function detailLowerContainerAboutTemplate(pokemon, i) {
 }
 
 function detailLowerContainerStatsTemplate(pokemon, i) {
+  let hp = pokemon.stats[0].base_stat;
+  let attack = pokemon.stats[1].base_stat;
+  let defense = pokemon.stats[2].base_stat;
+  let spattack = pokemon.stats[3].base_stat;
+  let spdefense = pokemon.stats[4].base_stat;
+  let speed = pokemon.stats[5].base_stat;
   return `
     <div class="detail_menu">
       <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
@@ -124,26 +130,70 @@ function detailLowerContainerStatsTemplate(pokemon, i) {
       <p onclick="renderDetailEvolution(${i})">evolution</p>
     </div>
     <div class="detail_container">
-          <div class="detail_pack">
-            <div class="detail_keys">
-            <b>HP</b> <br>
-            <b>Atk</b> <br>
-            <b>Def</b> <br>
-            <b>SpAtk</b> <br>
-            <b>SpDef</b> <br>
-            <b>Spd</b> <br>
+            <div class="detail_pack_stats">
+              <div class="stat">
+                <div class="detail_keys_stat">
+                  <b>HP</b>
+                </div>
+                <div class="detail_value_stat">
+                  ${hp}
+                </div>
+                <div class="gradbox_hp">
+                </div>
+              </div>
+              <div class="stat">
+                <div class="detail_keys_stat">
+                  <b>Atk</b>
+                </div>
+                <div class="detail_value_stat">
+                  ${attack}
+                </div>
+                <div class="gradbox_atk">
+                </div>
+              </div>
+              <div class="stat">
+                <div class="detail_keys_stat">
+                  <b>Def</b>
+                </div>
+                <div class="detail_value_stat">
+                  ${defense}
+                </div>
+                <div class="gradbox_def">
+                </div>
+              </div>
+              <div class="stat">
+                <div class="detail_keys_stat">
+                  <b>SpAtk</b>
+                </div>
+                <div class="detail_value_stat">
+                  ${spattack}
+                </div>
+                <div class="gradbox_spatk">
+                </div>
+              </div>
+              <div class="stat">
+                <div class="detail_keys_stat">
+                  <b>SpDef</b>
+                </div>
+                <div class="detail_value_stat">
+                  ${spdefense}
+                </div>
+                <div class="gradbox_spdef">
+                </div>
+              </div>
+              <div class="stat">
+                <div class="detail_keys_stat">
+                  <b>Speed</b>
+                </div>
+                <div class="detail_value_stat">
+                  ${speed}
+                </div>
+                <div class="gradbox_spd">
+                </div>
+              </div>
             </div>
-            <div class="detail_value">
-            25 <br>
-            25 <br>
-            25 <br>
-            25 <br>
-            25 <br>
-            25 <br>
             </div>
           </div>
-          </div>
-        </div>
   `;
 }
 
@@ -164,4 +214,20 @@ function detailLowerContainerEvoTemplate(pokemon, i) {
             </div>
           </div>
     `;
+}
+
+function setStatsCss(pokemon) {
+  let hp = (100 / 255) * pokemon.stats[0].base_stat;
+  let attack = (100 / 255) * pokemon.stats[1].base_stat;
+  let defense = (100 / 255) * pokemon.stats[2].base_stat;
+  let spattack = (100 / 255) * pokemon.stats[3].base_stat;
+  let spdefense = (100 / 255) * pokemon.stats[4].base_stat;
+  let speed = (100 / 255) * pokemon.stats[5].base_stat;
+  let root = document.documentElement;
+  root.style.setProperty("--hp", hp + "%");
+  root.style.setProperty("--atk", attack + "%");
+  root.style.setProperty("--def", defense + "%");
+  root.style.setProperty("--spatk", spattack + "%");
+  root.style.setProperty("--spdef", spdefense + "%");
+  root.style.setProperty("--spd", speed + "%");
 }

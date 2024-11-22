@@ -58,6 +58,7 @@ function renderDetailStats(i) {
   let pokemon = PokeDex[i];
   let downDetailRender = document.getElementById("downDetailRender");
   downDetailRender.innerHTML = detailLowerContainerStatsTemplate(pokemon, i);
+  setStatsCss(pokemon);
 }
 
 function renderDetailEvolution(i) {
@@ -131,4 +132,20 @@ function hide(id) {
 
 function show(id) {
   document.getElementById(id).classList.remove("d-none");
+}
+
+function setStatsCss(pokemon) {
+  let hp = (100 / 255) * pokemon.stats[0].base_stat;
+  let attack = (100 / 255) * pokemon.stats[1].base_stat;
+  let defense = (100 / 255) * pokemon.stats[2].base_stat;
+  let spattack = (100 / 255) * pokemon.stats[3].base_stat;
+  let spdefense = (100 / 255) * pokemon.stats[4].base_stat;
+  let speed = (100 / 255) * pokemon.stats[5].base_stat;
+  let root = document.documentElement;
+  root.style.setProperty("--hp", hp + "%");
+  root.style.setProperty("--atk", attack + "%");
+  root.style.setProperty("--def", defense + "%");
+  root.style.setProperty("--spatk", spattack + "%");
+  root.style.setProperty("--spdef", spdefense + "%");
+  root.style.setProperty("--spd", speed + "%");
 }

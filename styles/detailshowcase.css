@@ -1,5 +1,5 @@
 .detailinformation {
-  background-color: white;
+  background-color: #202020;
 }
 
 .detailinformation_upper_half {
@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  color: white;
 }
 
 .detail_name img {
@@ -59,7 +60,7 @@
 
 .detail_pack {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 15px;
   width: 100%;
@@ -82,4 +83,32 @@
 
 .detail_breeding_value img {
   height: 16px;
+}
+
+.detail_pack_stats {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  flex-direction: column;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.detail_keys_stat {
+  width: 67px;
+}
+
+.detail_value_stat {
+  width: 41px;
+}
+
+.color_white {
+  color: white;
 }
