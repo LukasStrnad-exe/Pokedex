@@ -125,3 +125,10 @@
 .color_white {
   color: white;
 }
+
+@media (max-width: 600px) {
+  .detailinformation {
+    width: 100vw;
+    font-size: 14px;
+  }
+}

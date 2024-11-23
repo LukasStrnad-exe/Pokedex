@@ -25,36 +25,37 @@
     <script src="scripts/typeClasslist.js" defer></script>
   </head>
   <body onload="onload()">
-    <header>
-      <div class="head">
-        <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
-        <h1>Pokedex</h1>
-      </div>
-    </header>
-    <div class="wrapper">
-      <div class="custom_input">
-        <input
-          id="filterword"
-          class="input"
-          type="text"
-          placeholder="Search your Pokemon"
-        />
-        <button onclick="search()">
-          <img src="assets/icons/lupe.png" alt="suche" />
-        </button>
-      </div>
-      <div class="container" id="container"></div>
-      <div class="load_button" id="loadButton" onclick="loadButton()">
-        <button>
-          <img src="assets/icons/aktualisierung.png" alt="load_pokemon" />
-        </button>
-      </div>
-      <div class="detailinformation-bg d-none" id="detailinformationBg">
-        <div class="detailinformation" id="detailinformation"></div>
-      </div>
-    </div>
-    <div class="loadinbutton d-none" id="loadinButton">
-      <img src="assets/gif/load-animation.gif" alt="load" />
+    <div class="max_width">
+      <header>
+        <div class="head">
+          <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
+          <h1>Pokedex</h1>
+        </div>
+      </header>
+      <div class="wrapper">
+          <div class="custom_input">
+            <input
+              id="filterword"
+              class="input"
+              type="text"
+              placeholder="Search your Pokemon"
+            />
+            <button onclick="search()">
+              <img src="assets/icons/lupe.png" alt="suche" />
+            </button>
+          </div>
+          <div class="container" id="container"></div>
+          <div class="load_button" id="loadButton" onclick="loadButton()">
+            <button>
+              <img src="assets/icons/aktualisierung.png" alt="load_pokemon" />
+            </button>
+          </div>
+          <div class="detailinformation-bg d-none" id="detailinformationBg">
+            <div class="detailinformation" id="detailinformation"></div>
+          </div>
+        <div class="loadinbutton d-none" id="loadinButton">
+          <img src="assets/gif/load-animation.gif" alt="load" />
+        </div>
     </div>
   </body>
 </html>
