@@ -79,8 +79,8 @@ function detailLowerContainerAboutTemplate(pokemon, i) {
               <b>
                 Height <br />
                 Weight <br />
-                Abilities 1 <br />
-                Abilities 2 <br />
+                Ability 1 <br />
+                Ability 2 <br />
                 Base Happines <br />
                 Capture Rate <br />
               </b>

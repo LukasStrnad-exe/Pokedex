@@ -93,7 +93,7 @@ function deleteAbility1(pokemon) {
     return ``;
   } else {
     return `
-        / ${ability1}
+        ${ability1}
           `;
   }
 }
