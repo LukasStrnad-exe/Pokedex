@@ -6,13 +6,16 @@ let PokeSpecies = [];
 let load = 1;
 
 async function onload() {
+  show("loadinButton");
   await loopPushData(1, 21, base_url, PokeDex);
   await loopPushData(1, 21, PokeSpecies_url, PokeSpecies);
   render(0, 20);
+  hide("loadinButton");
   renderDetail();
 }
 
 async function loadButton() {
+  show("loadinButton");
   hide("loadButton");
   x = 20 * load;
   y = 0 + x;
@@ -24,6 +27,7 @@ async function loadButton() {
   await loopPushData(yLoop, zLoop, PokeSpecies_url, PokeSpecies);
   render(y, z);
   show("loadButton");
+  hide("loadinButton");
 }
 
 async function loopPushData(y, z, url, array) {

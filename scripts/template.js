@@ -71,7 +71,7 @@ function detailLowerContainerAboutTemplate(pokemon, i) {
         <div class="detail_menu">
           <p onclick="renderDetail(${i}),"><b>about</b></p>
           <p onclick="renderDetailStats(${i})">stats</p>
-          <p onclick="renderDetailEvolution(${i})">evolution</p>
+          <p onclick="renderDetailEvolution(${i})">sprites</p>
         </div>
         <div class="detail_container">
           <div class="detail_pack">
@@ -127,7 +127,7 @@ function detailLowerContainerStatsTemplate(pokemon, i) {
     <div class="detail_menu">
       <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
       <p onclick="renderDetailStats(${i})"><b>stats</b></p>
-      <p onclick="renderDetailEvolution(${i})">evolution</p>
+      <p onclick="renderDetailEvolution(${i})">sprites</p>
     </div>
     <div class="detail_container">
             <div class="detail_pack_stats">
@@ -198,36 +198,20 @@ function detailLowerContainerStatsTemplate(pokemon, i) {
 }
 
 function detailLowerContainerEvoTemplate(pokemon, i) {
+  let spriteFront = pokemon.sprites.front_default;
+  let spriteBack = pokemon.sprites.back_default;
   return `
       <div class="detail_menu">
         <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
         <p onclick="renderDetailStats(${i})">stats</p>
-        <p><b>evolution</b></p>
+        <p><b>sprites</b></p>
       </div>
       <div class="detail_container">
-            <div class="detail_pack">
-              <div class="detail_keys">
-              </div>
-              <div class="detail_value">
-              </div>
+            <div class="detail_pack_sprites">
+              <img src="${spriteFront}" alt="shinyImg">
+              <img src="${spriteBack}" alt="shinyImg">
             </div>
             </div>
           </div>
     `;
-}
-
-function setStatsCss(pokemon) {
-  let hp = (100 / 255) * pokemon.stats[0].base_stat;
-  let attack = (100 / 255) * pokemon.stats[1].base_stat;
-  let defense = (100 / 255) * pokemon.stats[2].base_stat;
-  let spattack = (100 / 255) * pokemon.stats[3].base_stat;
-  let spdefense = (100 / 255) * pokemon.stats[4].base_stat;
-  let speed = (100 / 255) * pokemon.stats[5].base_stat;
-  let root = document.documentElement;
-  root.style.setProperty("--hp", hp + "%");
-  root.style.setProperty("--atk", attack + "%");
-  root.style.setProperty("--def", defense + "%");
-  root.style.setProperty("--spatk", spattack + "%");
-  root.style.setProperty("--spdef", spdefense + "%");
-  root.style.setProperty("--spd", speed + "%");
 }
