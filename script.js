@@ -113,10 +113,13 @@ function deleteEggGroup1(pokemonSpecies) {
 
 function search() {
   let filterword = document.getElementById("filterword").value;
-  searchPoke = PokeDex.filter((pokemon) => pokemon.name.includes(filterword));
-  console.log(searchPoke);
-
-  rendersearch();
+  let length = filterword.length;
+  if (length > 2) {
+    searchPoke = PokeDex.filter((pokemon) => pokemon.name.includes(filterword));
+    rendersearch();
+  } else {
+    alert("It must include at least 3 letter.");
+  }
 }
 
 function rendersearch() {

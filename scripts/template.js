@@ -79,7 +79,8 @@ function detailLowerContainerAboutTemplate(pokemon, i) {
               <b>
                 Height <br />
                 Weight <br />
-                Abilities <br />
+                Abilities 1 <br />
+                Abilities 2 <br />
                 Base Happines <br />
                 Capture Rate <br />
               </b>
@@ -87,7 +88,8 @@ function detailLowerContainerAboutTemplate(pokemon, i) {
             <div class="detail_value">
               ${height} m <br />
               ${weight} kg <br />
-              ${ability0}${deleteAbility1(pokemon)} <br />
+              ${ability0} <br />
+              ${deleteAbility1(pokemon)} <br />
               ${baseHappiness} <br />
               ${captureRate} <br />
             </div>

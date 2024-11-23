@@ -2,6 +2,11 @@ body {
   background-color: #282828;
 }
 
+h1 {
+  color: #fecc00;
+  margin-left: 15px;
+}
+
 :root {
   --hp: 10%;
   --atk: 20%;
