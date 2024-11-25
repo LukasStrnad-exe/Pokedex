@@ -183,3 +183,11 @@ function pokemonBackRender(i, id) {
   BgColorType(i, 1, PokeDex);
   BgColorType(i, 2, PokeDex);
 }
+
+const inputField = document.getElementById("filterword");
+inputField.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    search();
+  }
+});
