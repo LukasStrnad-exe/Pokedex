@@ -183,7 +183,9 @@ function pokemonBackRender(i, id) {
   }
   show("detailinformationBg");
   BgColorType(i, 1, PokeDex);
-  BgColorType(i, 2, PokeDex);
+  try {
+    BgColorType(i, 2, PokeDex);
+  } catch (error) {}
 }
 
 const inputField = document.getElementById("filterword");
