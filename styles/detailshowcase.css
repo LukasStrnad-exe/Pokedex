@@ -28,6 +28,7 @@
 .detail_name img {
   height: 3vh;
   cursor: pointer;
+  filter: invert(1);
 }
 
 .detailinformation_lower_half {
