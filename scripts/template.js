@@ -247,5 +247,6 @@ function detailLowerContainerEvoTemplate(pokemon, i) {
             </div>
           </div>
           </div>
+          </div>
     `;
 }
