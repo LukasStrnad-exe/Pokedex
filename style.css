@@ -3,10 +3,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-header {
-  width: 100%;
+  flex-direction: column;
 }
 
 h1 {
@@ -104,10 +101,6 @@ h1 {
 .input {
   width: 100%;
   height: 36px;
-}
-
-.custom_input {
-  width: 100%;
 }
 
 .load_button button {
@@ -234,4 +227,24 @@ h1 {
 
 .loadinbutton img {
   width: 110px;
+}
+
+.detail_button_pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px;
+}
+
+.pfeil_links {
+  cursor: pointer;
+}
+
+.pfeil_rechts {
+  cursor: pointer;
+}
+
+.pfeil_links img {
+  rotate: 180deg;
 }

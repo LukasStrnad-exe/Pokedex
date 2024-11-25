@@ -4,11 +4,27 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.head {
+.logo {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 90%;
+}
+
+.max_width_header{
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .max_width_header h1 {
+    display: none;
+  }
 }

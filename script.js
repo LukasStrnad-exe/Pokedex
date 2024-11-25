@@ -114,7 +114,12 @@ function deleteEggGroup1(pokemonSpecies) {
 function search() {
   let filterword = document.getElementById("filterword").value;
   let length = filterword.length;
-  if (length > 2) {
+  let container = document.getElementById("container");
+  if (length === 0) {
+    container.innerHTML = ``;
+    render(0, PokeDex.length);
+    show("loadButton");
+  } else if (length > 2) {
     searchPoke = PokeDex.filter((pokemon) => pokemon.name.includes(filterword));
     rendersearch();
   } else {
@@ -155,4 +160,26 @@ function setStatsCss(pokemon) {
   root.style.setProperty("--spatk", spattack + "%");
   root.style.setProperty("--spdef", spdefense + "%");
   root.style.setProperty("--spd", speed + "%");
+}
+
+function pokemonBackRender(i, id) {
+  if (i === PokeDex.length) {
+    i = 0;
+  } else if (i === -1) {
+    i = PokeDex.length - 1;
+  }
+  if (id === 0) {
+    renderDetail(i);
+  }
+  if (id === 1) {
+    renderDetail(i);
+    renderDetailStats(i);
+  }
+  if (id === 2) {
+    renderDetail(i);
+    renderDetailEvolution(i);
+  }
+  show("detailinformationBg");
+  BgColorType(i, 1, PokeDex);
+  BgColorType(i, 2, PokeDex);
 }

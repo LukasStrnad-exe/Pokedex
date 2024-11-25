@@ -112,6 +112,17 @@ function detailLowerContainerAboutTemplate(pokemon, i) {
               ${eggCycle} <br />
             </div>
           </div>
+          <div class="detail_button_pokemon">
+            <div class="pfeil_links" onclick="pokemonBackRender(${i}-1,0)">
+              <img src="assets/icons/rechter-pfeil.png" alt="letztes Pokemon" />
+            </div>
+            <div class="pfeil_rechts" onclick="pokemonBackRender(${i}+1,0)">
+              <img
+                src="assets/icons/rechter-pfeil.png"
+                alt="nächstes Pokemon"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -194,6 +205,17 @@ function detailLowerContainerStatsTemplate(pokemon, i) {
                 </div>
               </div>
             </div>
+                      <div class="detail_button_pokemon">
+            <div class="pfeil_links" onclick="pokemonBackRender(${i}-1,1)">
+              <img src="assets/icons/rechter-pfeil.png" alt="letztes Pokemon" />
+            </div>
+            <div class="pfeil_rechts" onclick="pokemonBackRender(${i}+1,1)">
+              <img
+                src="assets/icons/rechter-pfeil.png"
+                alt="nächstes Pokemon"
+              />
+            </div>
+          </div>
             </div>
           </div>
   `;
@@ -213,7 +235,17 @@ function detailLowerContainerEvoTemplate(pokemon, i) {
               <img src="${spriteFront}" alt="shinyImg">
               <img src="${spriteBack}" alt="shinyImg">
             </div>
+                      <div class="detail_button_pokemon">
+            <div class="pfeil_links" onclick="pokemonBackRender(${i}-1,2)">
+              <img src="assets/icons/rechter-pfeil.png" alt="letztes Pokemon" />
             </div>
+            <div class="pfeil_rechts" onclick="pokemonBackRender(${i}+1,2)">
+              <img
+                src="assets/icons/rechter-pfeil.png"
+                alt="nächstes Pokemon"
+              />
+            </div>
+          </div>
           </div>
     `;
 }

@@ -12,8 +12,7 @@ header img {
   display: flex;
   align-items: center;
   position: relative;
-  max-width: 100%;
-  margin-top: 20px;
+  gap: 5px;
 }
 
 .input {
@@ -59,4 +58,8 @@ header img {
 .load_button img {
   width: 52px;
   border-radius: 50%;
+}
+
+.detail_button_pokemon img{
+  width: 40px;
 }

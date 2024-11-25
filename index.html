@@ -25,14 +25,12 @@
     <script src="scripts/typeClasslist.js" defer></script>
   </head>
   <body onload="onload()">
-    <div class="max_width">
-      <header>
-        <div class="head">
-          <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
-          <h1>Pokedex</h1>
-        </div>
-      </header>
-      <div class="wrapper">
+      <header >
+        <div class="max_width_header">
+          <div class="logo">
+            <a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
+            <h1>Pokedex</h1>
+          </div>
           <div class="custom_input">
             <input
               id="filterword"
@@ -44,6 +42,9 @@
               <img src="assets/icons/lupe.png" alt="suche" />
             </button>
           </div>
+        </div>
+      </header>
+      <div class="wrapper">
           <div class="container" id="container"></div>
           <div class="load_button" id="loadButton" onclick="loadButton()">
             <button>
@@ -56,6 +57,5 @@
         <div class="loadinbutton d-none" id="loadinButton">
           <img src="assets/gif/load-animation.gif" alt="load" />
         </div>
-    </div>
   </body>
 </html>
