@@ -118,11 +118,9 @@ function deleteEggGroup1(pokemonSpecies) {
 function search() {
   let filterword = document.getElementById("filterword").value;
   let length = filterword.length;
-  let container = document.getElementById("container");
+  show("searchBack");
   if (length === 0) {
-    container.innerHTML = ``;
-    render(0, PokeDex.length);
-    show("loadButton");
+    searchBack();
   } else if (length > 2) {
     searchPoke = PokeDex.filter((pokemon) => pokemon.name.includes(filterword));
     rendersearch();
@@ -195,3 +193,11 @@ inputField.addEventListener("keypress", function (event) {
     search();
   }
 });
+
+function searchBack() {
+  let container = document.getElementById("container");
+  container.innerHTML = ``;
+  render(0, PokeDex.length);
+  show("loadButton");
+  hide("searchBack");
+}
