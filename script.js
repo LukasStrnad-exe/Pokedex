@@ -11,7 +11,6 @@ async function onload() {
   await loopPushData(1, 21, PokeSpecies_url, PokeSpecies);
   render(0, 20);
   hide("loadinButton");
-  renderDetail();
 }
 
 async function loadButton() {
@@ -51,11 +50,16 @@ function render(y, z) {
   }
 }
 
-function renderDetail(i) {
+async function renderDetail(i) {
   let pokemon = PokeDex[i];
   let detailContainer = document.getElementById("detailinformation");
   detailContainer.innerHTML = detailUpperContainerTemplate(pokemon, i);
   detailContainer.innerHTML += detailLowerContainerAboutTemplate(pokemon, i);
+  show("detailinformationBg");
+  BgColorType(i, 1, PokeDex);
+  try {
+    BgColorType(i, 2, PokeDex);
+  } catch (error) {}
 }
 
 function renderDetailStats(i) {

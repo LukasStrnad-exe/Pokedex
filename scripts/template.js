@@ -4,7 +4,7 @@ function containerTemplate(pokemon, i) {
   let name = pokemon.name;
   let type0 = pokemon.types[0].type.name;
   return `
-        <div class="pokemon_card" onclick="renderDetail(${i}), show('detailinformationBg'), BgColorType(${i}, 1, PokeDex), BgColorType(${i}, 2, PokeDex)">
+        <div class="pokemon_card" onclick="renderDetail(${i})">
             <div class="pokemon_img">
                 <img src="${sprite}" alt="${name}" />
             </div>
@@ -138,7 +138,7 @@ function detailLowerContainerStatsTemplate(pokemon, i) {
   let speed = pokemon.stats[5].base_stat;
   return `
     <div class="detail_menu">
-      <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
+      <p onclick="renderDetail(${i})">about</p>
       <p onclick="renderDetailStats(${i})"><b>stats</b></p>
       <p onclick="renderDetailEvolution(${i})">sprites</p>
     </div>
@@ -226,7 +226,7 @@ function detailLowerContainerEvoTemplate(pokemon, i) {
   let spriteBack = pokemon.sprites.back_default;
   return `
       <div class="detail_menu">
-        <p onclick="renderDetail(${i}), BgColorType(${i}, 1, PokeDex,), BgColorType(${i}, 2, PokeDex,)">about</p>
+        <p onclick="renderDetail(${i})">about</p>
         <p onclick="renderDetailStats(${i})">stats</p>
         <p><b>sprites</b></p>
       </div>
