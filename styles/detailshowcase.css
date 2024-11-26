@@ -132,5 +132,10 @@
   .detailinformation {
     width: 100vw;
     font-size: 14px;
+    height: 86vh;
+  }
+
+  .detailinformation_lower_half {
+    min-height: 46vh;
   }
 }
