@@ -137,6 +137,7 @@ function rendersearch() {
     let container = document.getElementById("container");
     container.innerHTML += containerTemplate(pokemon, i);
     BgColorType(i, 0, searchPoke);
+    document.getElementById("filterword").value = "";
   }
 }
 
@@ -193,12 +194,14 @@ inputField.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     search();
+    document.getElementById("filterword").value = "";
   }
 });
 
 function searchBack() {
   let container = document.getElementById("container");
   container.innerHTML = ``;
+  document.getElementById("filterword").value = "";
   render(0, PokeDex.length);
   show("loadButton");
   hide("searchBack");
